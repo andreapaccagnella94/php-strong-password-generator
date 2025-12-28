@@ -71,20 +71,20 @@ if ($password != "") {
                         <div class="row mb-3">
                             <div class="col-sm-8 offset-sm-4">
                                 <div class="form-check">
-                                    <input class="form-check-input" type="checkbox" id="gridCheck1">
-                                    <label class="form-check-label" for="gridCheck1">
+                                    <input class="form-check-input" type="checkbox" id="lettere" name="lettere">
+                                    <label class="form-check-label" for="lettere">
                                         Lettere
                                     </label>
                                 </div>
                                 <div class="form-check">
-                                    <input class="form-check-input" type="checkbox" id="gridCheck1">
-                                    <label class="form-check-label" for="gridCheck1">
+                                    <input class="form-check-input" type="checkbox" id="numeri" name="numeri">
+                                    <label class="form-check-label" for="numeri">
                                         Numeri
                                     </label>
                                 </div>
                                 <div class="form-check">
-                                    <input class="form-check-input" type="checkbox" id="gridCheck1">
-                                    <label class="form-check-label" for="gridCheck1">
+                                    <input class="form-check-input" type="checkbox" id="simboli" name="simboli">
+                                    <label class="form-check-label" for="simboli">
                                         Simboli
                                     </label>
                                 </div>

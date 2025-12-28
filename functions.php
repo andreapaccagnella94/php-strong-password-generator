@@ -10,7 +10,22 @@ function generaPassword($lunghezza = 16)
     $lowercase = "abcdefghijklmnopqrstuvwxyz";
     $uppercase = "ABCDEFGHIJKLMNOPQRSTUVWXYZ";
     $symbols = "!@#$%^&*()-_=+[]{}";
-    $caratteri = $numbers . $lowercase . $uppercase . $symbols;
+
+    $caratteri = "";
+
+    // controllo se inserire le lettere
+    if (isset($_GET["lettere"]) && $_GET["lettere"] == "on") {
+        $caratteri .= $lowercase . $uppercase;
+    }
+    // controllo se inserire le numeri
+    if (isset($_GET["numeri"]) && $_GET["numeri"] == "on") {
+        $caratteri .= $numbers;
+    }
+    // controllo se inserire i simboli
+    if (isset($_GET["simboli"]) && $_GET["simboli"] == "on") {
+        $caratteri .= $symbols;
+    }
+
     $caratteriLunghezza = strlen($caratteri);
     $stringaCasuale = '';
 

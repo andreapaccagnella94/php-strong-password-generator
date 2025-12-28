@@ -1,6 +1,8 @@
 <?php
 session_start();
 
+$password = $_SESSION["password"];
+
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -13,9 +15,11 @@ session_start();
 
 <body>
 
-    <h1>La tua password di X caretteri </h1>
+    <nav><a href="./index.php">Torna indietro</a></nav>
 
-    <pre> <?php echo $_SESSION["password"] ?> </pre>
+    <h1>La tua password di <?php echo strlen($password); ?> caretteri </h1>
+
+    <pre> <?php echo $password ?> </pre>
 </body>
 
 </html>
