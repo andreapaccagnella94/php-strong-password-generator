@@ -23,13 +23,14 @@ function generaPassword($lunghezza = 16)
 // Esempio di utilizzo: genera una stringa di 20 caratteri
 // echo generaPassword(20);
 
-// mi creo una variabile di appoggio per il numero di caratteri
+// mi creo una variabile di appoggio per il numero di caratteri e per la password
 $legnt_of_password = 0;
+$password = "";
 // recupero il parametro get dal form
 if (isset($_GET["password-lenght"])) {
-    echo $_GET["password-lenght"]; // recuperato il dato dal form
+    // echo $_GET["password-lenght"]; // recuperato il dato dal form
     $legnt_of_password = $_GET["password-lenght"];
-    echo generaPassword($legnt_of_password);
+    $password = generaPassword($legnt_of_password);
 };
 
 
@@ -114,6 +115,16 @@ if (isset($_GET["password-lenght"])) {
                     </form>
                 </div>
             </div>
+            <hr>
+            <?php
+            if ($password != "") {
+            ?>
+                <h2>La tua password è:</h2>
+                <pre> <?php echo $password ?> </pre>
+            <?php
+            }
+
+            ?>
         </div>
 
 
