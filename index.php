@@ -1,5 +1,16 @@
 <?php
-require_once "./functions.php"
+require_once "./functions.php";
+
+if ($password != "") {
+
+    // iniziamo la session così da recuperare un dato
+    session_start();
+    // salviamo la password sulla variabile di sessione
+    $_SESSION["password"] = $password;
+    // dirottiamo l'utente sulla schermata apposta della password
+    header("Location: ./password.php");
+}
+
 
 
 ?>
