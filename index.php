@@ -3,7 +3,12 @@
 function generaPassword($lunghezza = 16)
 {
     // Definisci i caratteri: lettere, numeri e simboli
-    $caratteri = '0123456789abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ!@#$%^&*()-_=+[]{}';
+    // divido nei vari gruppi
+    $numbers = "0123456789";
+    $lowercase = "abcdefghijklmnopqrstuvwxyz";
+    $uppercase = "ABCDEFGHIJKLMNOPQRSTUVWXYZ";
+    $symbols = "!@#$%^&*()-_=+[]{}";
+    $caratteri = $numbers . $lowercase . $uppercase . $symbols;
     $caratteriLunghezza = strlen($caratteri);
     $stringaCasuale = '';
 
@@ -24,10 +29,9 @@ $legnt_of_password = 0;
 if (isset($_GET["password-lenght"])) {
     echo $_GET["password-lenght"]; // recuperato il dato dal form
     $legnt_of_password = $_GET["password-lenght"];
+    echo generaPassword($legnt_of_password);
 };
 
-
-echo generaPassword($legnt_of_password);
 
 ?>
 
@@ -63,7 +67,7 @@ echo generaPassword($legnt_of_password);
                         <div class="row mb-3">
                             <label for="password-lenght" class="col-sm-4 col-form-label">Lunghezza password</label>
                             <div class="col-sm-8">
-                                <input type="number" class="form-control" id="password-lenght" name="password-lenght">
+                                <input type="number" min="8" max="19" class="form-control" id="password-lenght" name="password-lenght">
                             </div>
                         </div>
                         <fieldset class="row mb-3">
